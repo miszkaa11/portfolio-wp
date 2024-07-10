@@ -1,0 +1,56 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/root" as *;
+
+/*
+    Buttons
+-------------------------------------
+*/
+
+.btn {
+  @include flex-center();
+  background-color: $color__orange;
+  color: $color__gray-dark;
+  border-radius: var(--button__border-radius);
+  cursor: pointer;
+  border: none;
+  @include transition();
+  &:hover {
+    background-color: $color__gray-dark;
+    color: $color__blue-light;
+  }
+}
+
+// Submit
+.wpcf7-submit,
+.news__btn,
+.gallery__btn,
+.nav-subtitle {
+  font-weight: $font-weight__bold;
+  position: relative;
+  i {margin-left: var(--content__space-xs);}
+}
+
+.wpcf7-submit {
+  font-size: var(--button-submit__font-size);
+  width: var(--button-submit__width);
+  height: var(--button-submit__height);
+  &:hover {
+    margin-left: var(--content__space-xs);
+  }
+}
+.news__btn,
+.gallery__btn,
+.nav-subtitle {
+  font-size: var(--button__font-size);
+  width: var(--button__width);
+  height: var(--button__height);
+}
+
+.news__btn,
+.gallery__btn,
+.nav-subtitle {
+  &:hover {
+    margin-left: var(--content__space-xs);
+  }
+}

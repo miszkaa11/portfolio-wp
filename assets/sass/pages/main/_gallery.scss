@@ -1,0 +1,89 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/root" as *;
+@use "../../abstracts/variables" as *;
+
+/*
+    Gallery
+-------------------------------------
+*/
+
+.gallery {
+  &__content {
+    .gallery__inner {
+      background-color: $color__gray-light;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--gallery-card__height);
+      border-radius: var(--content__border-radius);
+      margin-bottom: var(--section__space);
+      .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: var(--section__division-m);
+        padding: var(--content-box__spacing);
+        h3,
+        p {margin-bottom: var(--content__space-s);}
+      }
+      .thumbnail {
+        flex-basis: var(--section__division-l);
+        .image {
+          @include img100();
+          object-fit: cover;
+          object-position: bottom;
+        }
+      }
+      .description,
+      .thumbnail {height: 100%;
+        .link {
+          i {margin-left: 0.3rem;}
+          &:hover {
+            i {
+              @include transition();
+              color: $color__blue-light;
+            }
+          }
+        }
+        .link--mobile {display: none;}
+      }
+      &:nth-child(odd) {
+        .description {
+          order: var(--gallery-card__order);
+        }
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 999px) {
+  .gallery {
+    &__content {
+      .gallery__inner {flex-direction: column;
+        .description,
+        .thumbnail {
+          flex-basis: 100%;
+          width: 100%;
+        }
+        .description {
+          .link--desktop {display: none;}
+        }
+        .thumbnail {max-height: 100%;
+          .link--mobile {
+            display: flex;
+            font-weight: $font-weight__regular;
+            margin: var(--content__space-xs-mobile) 0 var(--content__space-s-mobile) 0;
+          }
+        }
+      }
+    }
+  }
+}

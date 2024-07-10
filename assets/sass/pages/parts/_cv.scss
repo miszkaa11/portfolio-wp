@@ -1,0 +1,136 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/root" as *;
+@use "../../abstracts/variables" as *;
+
+/*
+    Cv
+-------------------------------------
+*/
+
+.cv {
+  margin-bottom: var(--section__space);
+  .info__content {
+    .section-title {margin: var(--content__space-s) 0;}
+    .personal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__image {
+        flex-basis: 30%;
+      }
+      &__info {
+        flex-basis: 60%;
+        .personal__item {
+          display: flex;
+          align-items: center;
+          margin-bottom: var(--content__space-xs);
+          &:nth-child(1) {
+            margin-bottom: var(--content__space-l);
+          }
+          .personal__header {
+            &.name {color: $color__white;}
+          }
+          label {
+            font-weight: $font-weight__regular;
+            color: $color__orange;
+            margin-right: var(--content__space-xs);
+          }
+        }
+      }
+    }
+    .info {
+      &__text {
+        font-weight: $font-weight__regular;
+        color: $color__blue-light;
+        margin: var(--content__space-s) 0;
+        &:last-of-type {margin: 0;}
+      }
+    }
+    .experience {
+      .experience__text {
+        color: $color__orange;
+        span {font-weight: $font-weight__bold;}
+      }
+      .cta__text {
+        margin-top: var(--content__space-s);
+      }
+      .cta__link {
+        display: block;
+        color: $color__white;
+        width: fit-content;
+        margin-top: var(--content__space-s);
+        &:hover {color: $color__blue-light;}
+      }
+    }
+    .technologies {
+      display: flex;
+      align-items: center;
+      margin: var(--content__space-l) 0;
+      .section-title {
+        margin-right: var(--content__space-l);
+      }
+      .icons {
+        justify-content: space-between;
+        width: 100%;
+        .icon {
+          i {
+            color: $color__orange;
+          }
+        }
+      }
+    }
+    .stack {
+      display: flex;
+      .section-title {margin-top: 0;}
+      .wp-stack {margin-right: 33%;}
+      .wp-stack,
+      .front-stack {
+        .stack__text {color: $color__orange;}
+      }
+    }
+    .agreement {
+      margin-top: var(--content__space-l);
+      &__text {color: $color__orange;}
+    }
+  }
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 999px) {
+  .cv {
+    .info__content {
+      .technologies {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .stack {
+        .wp-stack {
+          margin-right: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .cv {
+    .info__content {
+      .personal {
+        flex-direction: column;
+        &__image,
+        &__info {
+          flex-basis: 100%;
+          width: 100%;
+        }
+        &__image {margin-bottom: var(--content__space-s-mobile);}
+        &__info {
+          .personal__item {margin: 0;}
+        }
+      }
+    }
+  }
+}

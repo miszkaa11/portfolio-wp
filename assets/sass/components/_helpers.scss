@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/root" as *;
+@use "../abstracts/variables" as *;
+
+/*
+    Helpers
+-------------------------------------
+*/
+
+// Arrow
+.arrow {
+  @include flex-center();
+  &__btn {
+    @include flex-center();
+    width: var(--arrow-width);
+    height: var(--arrow-height);
+    i {font-size: var(--arrow__font-size);}
+    &:visited,
+    &:focus,
+    &:active {
+      background-color: $color__gray-dark;
+      outline: 1px solid $color__orange;
+    }
+  }
+}
+
+// Fancybox
+#fancybox-content {
+  border-width: 0 !important;
+}
+.fancy-ico span {
+  background: $color__orange !important;
+  border: 2px solid transparent !important;
+  border-radius: .4rem !important;
+  transform: none !important;
+}

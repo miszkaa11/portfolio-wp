@@ -1,0 +1,17 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/root' as *;
+@use '../abstracts/variables' as *;
+
+/*
+    Scrolled
+-------------------------------------
+*/
+
+#masthead {
+  @include transition();
+  &.scrolled {
+    height: var(--navigation__height-scrolled);
+    @include box-shadow(0 -8px 5px 10px rgba(171, 178, 178, 0.25));
+    opacity: 0.9;
+  }
+}

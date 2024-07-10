@@ -1,0 +1,119 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/root" as *;
+@use "../../abstracts/variables" as *;
+
+/*
+    Info
+-------------------------------------
+*/
+
+.info {
+
+  // Intro
+  &.intro {
+    .info__content {
+      @include flex-center();
+      height: 100vh;
+      .info__inner {
+        .info__header {
+          text-align: center;
+          margin-bottom: var(--content__space-s);
+          &:first-of-type {font-family: $font-style__secondary;}
+          &:last-of-type {color: $color__blue-light;}
+        }
+        .arrow {
+          .arrow__btn {
+            width: calc(var(--arrow-width) + 5px);
+            height: calc(var(--arrow-height) + 5px);
+          }
+        }
+      }
+    }
+  }
+
+  // About
+  &.about {
+    .info__content {
+      background-color: $color__gray-light;
+      @include flex-center-between();
+      border-radius: var(--content__border-radius);
+      .info__inner {
+        &:nth-child(1) {
+          display: flex;
+          flex-basis: var(--section__division-s);
+        }
+        &:nth-child(2) {
+          flex-basis: var(--section__division-xl);
+          padding: var(--content-box__spacing);
+        }
+        max-height: var(--content__max-height);
+        .info__header {
+          font-family: $font-style__secondary;
+          color: $color__orange;
+          margin-bottom: var(--content__space-l);
+        }
+        .info__text {
+          margin-bottom: var(--content__space-s);
+          &:last-of-type {margin-bottom: 0;}
+        }
+      }
+    }
+  }
+
+  // Cv zone
+  &.cv-zone {
+    .info__content {
+      @include flex-center();
+      .info__inner {
+        margin: 0 var(--content__space-m);
+        .info__link {
+          @include flex-center();
+          flex-direction: column;
+          color: $color__gray;
+          text-align: center;
+          i {
+            font-size: var(--icons__font-size);
+            color: $color__orange;
+            margin-bottom: var(--content__space-s);
+            @include transition();
+          }
+          &:hover {
+            color: $color__blue-light;
+            i {
+              color: $color__blue-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 767px) {
+  .info {
+
+    // About
+    &.about {
+      .info__content {
+        flex-direction: column;
+        .info__inner {
+          &:nth-child(1) {
+            height: 625px;
+            width: 100%;
+          }
+          img {
+            object-fit: cover;
+            object-position: 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+

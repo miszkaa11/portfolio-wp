@@ -1,0 +1,263 @@
+/*
+Theme Name: michallukas
+Theme URI: https://michallukaszewicz.dev/
+Author: Michał Łukaszewicz
+Author URI: https://michallukaszewicz.dev/
+Description: Wordpress development template
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/**
+ * Normalize.css
+ * https://github.com/necolas/normalize.css
+ * Normalize.css is a small CSS file that provides better consistency in CSS
+ * across different browsers and devices. It preserves useful defaults rather
+ * than erasing them.
+ */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS./**
+ * 3. Prevent fonts from getting oversized in IE 11.
+**/
+
+html {
+    box-sizing: border-box;
+    line-height: 1.15; /* 1 */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+    margin: 0;
+}
+
+.post,
+.page {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p, pre {
+    margin: 0;
+}
+
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove the outline on focused links when they are also active
+ *    (e.g., in the same :active declaration).
+ */
+
+a {
+    text-decoration: none;
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove list decoration.
+ */
+
+li {
+    list-style-type: disc;
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+    display: block;
+}
+
+/*
+ * Add the correct styles in Edge, IE 10+, and Firefox.
+ */
+
+summary {
+    display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+    display: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+    overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+    text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/* Accessibility
+   ========================================================================== */
+
+/**
+ * 1. Remove the default button styling in Edge and Firefox.
+ */
+
+::-moz-focus-inner,
+::-moz-focus-outer { /* 1 */
+    border-style: none;
+}
+
+/**
+ * Remove the padding so developers are not caught out when they zero out
+ * "body" padding.
+ */
+
+:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/* Media
+   ========================================================================== */
+
+/**
+ * Change the colors for media controls in Edge and IE.
+ */
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+
+/* User interface
+   ========================================================================== */
+
+/**
+ * 1. Remove the padding in Firefox.
+ */
+
+::-webkit-file-upload-button { /* 1 */
+    padding: 0;
+}
+
+/* Root
+   ========================================================================== */
+
+/**
+ * Set the default font family in all browsers.
+ */
+
+html {
+    font-family: sans-serif;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+}
+
+/**
+ * Set the link color to match the text color in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+/* Box sizing
+   ========================================================================== */
+
+/**
+ * 1. Use border-box box-sizing in all browsers.
+ */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}

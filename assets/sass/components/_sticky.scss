@@ -1,0 +1,132 @@
+@use '../abstracts/root' as*;
+@use '../abstracts/mixins' as*;
+@use '../abstracts/variables' as*;
+
+/*
+    Sticky
+-------------------------------------
+*/
+
+#stickyButton {display: none;}
+
+.sticky {
+  position: fixed;
+  top: var(--sticky__position);
+  right: 0;
+  cursor: pointer;
+  animation: pulse 1s infinite alternate;
+  z-index: 999;
+  .sticky__title {
+    width: var(--sticky-button__width);
+    @include transition();
+    .sticky__header {
+      font-family: $font-style__secondary;
+      font-weight: $font-weight__light;
+      color: $color__gray-dark;
+      transform: rotate(-90deg);
+      @include transition();
+    }
+  }
+  .sticky__title,
+  .sticky__items {
+    background-color: $color__orange;
+    @include flex-center();
+    height: var(--sticky-content__height);
+    border-top-left-radius: var(--content__border-radius);
+    border-bottom-left-radius: var(--content__border-radius);
+  }
+  .sticky__items {
+    position: absolute;
+    top: var(--sticky__position);
+    right: var(--sticky__hide-value);
+    transform: translateY(-50%);
+    width: var(--sticky-content__width);
+    @include transition(right);
+    z-index: -1;
+    .sticky__item {
+      margin: 0 var(--content__space-s);
+      .sticky__link {
+        @include transition();
+        i {
+          font-size: var(--sticky-icon__font-size);
+          color: $color__gray-dark;
+          @include transition();
+          &:hover {
+            @include scale();
+          }
+        }
+        &.phone,
+        &.mail {
+          &:hover {
+            &::after {
+              background: $color__orange;
+              content: "";
+              position: absolute;
+              width: var(--sticky-content__width);
+              bottom: 1rem;
+              font-size: var(--sticky-signature__font-size);
+              font-weight: $font-weight__regular;
+              left: 50%;
+              text-align: center;
+              transform: translateX(-50%);
+              color: $color__gray-dark;
+              border-bottom-left-radius: var(--content__border-radius);
+            }
+          }
+        }
+        &.phone {
+          &:hover { &:after {content: "+48 731 540 795";} }
+        }
+        &.mail {
+          &:hover { &:after {content: "michal.lukaszewicz.dev@gmail.com";} }
+        }
+      }
+    }
+  }
+
+  &.clicked {
+    animation: none;
+    transform: translateY(-50%);
+    .sticky__title {
+      width: var(--sticky-__width-clicked);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 2px solid $color__gray-dark;
+      .sticky__header {
+        transform: rotate(0);
+        @include transition();
+      }
+    }
+    .sticky__items {right: var(--sticky-__width-clicked);}
+  }
+}
+
+// Animation
+@keyframes pulse {
+  from {transform: scale(1) translateY(-50%);}
+  to {transform: scale(1.1) translateY(-50%);}
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 1200px) {
+  .sticky {
+    .sticky__items {
+      .sticky__item {
+        .sticky__link {
+          &.phone,
+          &.mail {
+            &:hover {
+              &:after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

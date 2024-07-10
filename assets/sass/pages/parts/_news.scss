@@ -1,0 +1,104 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/root" as *;
+@use "../../abstracts/variables" as *;
+
+/*
+    News
+-------------------------------------
+*/
+
+// Blog
+.blog {
+  article {
+    margin-bottom: var(--section__space);
+    .entry-content {
+      margin: var(--content__space-s) 0;
+    }
+  }
+}
+
+// Single
+.single {
+  article {
+    background-color: $color__gray-light;
+    border-radius: var(--content__border-radius);
+    &.category-news {
+      .entry-content {
+        padding: var(--content-box__spacing);
+      }
+    }
+  }
+}
+
+// News
+.news__content {
+  background-color: $color__gray-light;
+  display: flex;
+  justify-content: space-between;
+  max-height: var(--news-card__max-height);
+  border-radius: var(--content__border-radius);
+  .news__inner {
+    width: 100%;
+    &:nth-child(1) {
+      flex-basis: var(--section__division-m);
+      padding: var(--content-box__spacing);
+    }
+    &:nth-child(2) {flex-basis: var(--section__division-l);}
+    .entry-meta,
+    .entry-content {
+      margin: var(--content__space-s) 0;
+    }
+
+    .entry-meta {
+      .posted-on {
+        font-family: $font-style__secondary;
+      }
+    }
+    .entry-photo {
+      img {
+        max-height: var(--news-card__max-height);
+      }
+    }
+    .entry-cta {display: flex;}
+    .entry-cta--mobile {display: none}
+  }
+}
+
+// Post navigation
+.post-navigation {
+  margin: var(--section__space) 0;
+  .nav-links {
+    .nav-previous,
+    .nav-next {
+      a {
+        display: flex;
+      }
+    }
+    .nav-previous {
+      a {justify-content: flex-start;}
+    }
+    .nav-next {
+      a {justify-content: flex-end;}
+    }
+  }
+}
+
+/*
+   Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 767px) {
+  .news {
+    &__content {
+      flex-direction: column;
+      .news__inner {
+        .entry-cta {display: none}
+        .entry-cta--mobile {
+          display: flex;
+          margin: var(--content__space-s-mobile) 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/root" as *;
+@use "../abstracts/variables" as *;
+
+/*
+    Title
+-------------------------------------
+*/
+
+.title {
+  @include flex-center();
+  flex-direction: column;
+  margin: var(--title__spacing);
+  &__content {
+    .title__header {
+      font-family: $font-style__secondary;
+      margin-bottom: var(--content__space-xs);
+    }
+    .subtitle__header {
+      color: $color__gray;
+      margin-bottom: var(--title__space);
+    }
+    .title__header,
+    .subtitle__header,
+    .title__link {
+      text-align: center;
+    }
+    .title__link {display: block}
+  }
+}
+
+// Title custom value
+.blog,
+.single,
+.page-template-privacy-policy,
+.page-template-cv {
+  .title {
+    margin: calc(var(--navigation__height) + var(--section__space)) 0 var(--section__space) 0;
+  }
+}

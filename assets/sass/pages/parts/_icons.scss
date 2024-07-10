@@ -1,0 +1,68 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/root' as *;
+@use '../../abstracts/variables' as *;
+
+/*
+    Icons
+-------------------------------------
+*/
+
+.icons {
+  @include flex-center-between();
+  &:has(i:hover) {
+    > .icon {
+      i {
+        &:hover {transform: scale(1.1);}
+        &:not(:hover) {
+          transform: scale(.7);
+          opacity: .7;
+        }
+      }
+    }
+  }
+  .icon {
+    i {
+      font-size: var(--icons__font-size);
+      color: $color__black;
+      @include transition();
+      &.fa-js-square { &:hover {color: $color__javascript;} }
+      &.fa-react { &:hover {color: $color__react;} }
+      &.fa-html5 { &:hover {color: $color__html-5;} }
+      &.fa-css3-alt { &:hover {color: $color__css-3;} }
+      &.fa-sass { &:hover {color: $color__sass;} }
+      &.fa-wordpress { &:hover {color: $color__wordpress;} }
+      &.fa-square-git { &:hover {color: $color__git;} }
+    }
+  }
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 999px) {
+  .icons {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .icon {
+      @include flex-center();
+      flex-basis: var(--icons__division);
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        margin-bottom: var(--icons__spacing);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .icons {
+    .icon {
+      &:nth-child(4) {
+        margin-bottom: var(--icons__spacing);
+      }
+    }
+  }
+}

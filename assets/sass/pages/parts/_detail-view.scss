@@ -1,0 +1,52 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/root" as *;
+@use "../../abstracts/variables" as *;
+
+/*
+    Detail view
+-------------------------------------
+*/
+
+  .detail-view__content {
+    margin-bottom: var(--section__space);
+    .project,
+    .info {
+      @include flex-center();
+      text-align: center;
+      padding: var(--content__space-l) 0;
+    }
+    .project {
+      i {margin-left: var(--content__space-xs);}
+    }
+    .info {
+      flex-direction: column;
+      .customer,
+      .date {margin-bottom: var(--content__space-l);}
+    }
+    .slider {
+      .splide {
+        .splide__arrows {
+          .splide__arrow {
+            background: $color__gray-dark;
+            border-radius: 0;
+            @include transition();
+            &--next {right: 1rem;}
+            &--prev {left: 1rem;}
+            svg {
+              fill: $color__white;
+            }
+          }
+        }
+        .splide__track {
+          overflow: visible;
+        }
+      }
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+
+
+

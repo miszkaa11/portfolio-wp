@@ -1,0 +1,55 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/root" as *;
+@use "../abstracts/variables" as*;
+
+/*
+    Normalize
+-------------------------------------
+*/
+
+body {
+  font-family: $font-style__primary;
+  background-color: $color__gray-dark;
+  font-size: var(--font-size__global);
+  font-weight: $font-weight__light;
+  color: $color__gray;
+}
+section {
+  &.gallery {
+    overflow: hidden;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight__regular;
+  color: $color__orange;
+}
+a {
+  font-weight: $font-weight__light;
+  color: $color__orange;
+  @include transition();
+  &:visited,
+  &:focus,
+  &:active {
+    color: $color__blue-light;
+  }
+  @media (hover: hover) {
+    &:hover {color: $color__blue-light;}
+  }
+}
+pre {
+  font-size: var(--font-size__text);
+  font-weight: $font-weight__light;
+  color: $color__gray;
+}
+img {
+  width: 100%;
+  height: auto;
+  @include transition();
+  border-radius: var(--content__border-radius);
+  @media (hover: hover) {
+    &:hover {
+      @include box-shadow(0 0 15px 5px rgba(171, 178, 178, 0.25));
+      opacity: 0.9 !important;
+    }
+  }
+}

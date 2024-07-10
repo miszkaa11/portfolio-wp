@@ -1,0 +1,70 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/root" as *;
+@use "../abstracts/variables" as *;
+
+/*
+    Contact
+-------------------------------------
+*/
+
+.contact {
+  margin-bottom: var(--section__space);
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    .info {
+      flex-basis: var(--section__division-l);
+      margin-top: var(--content__space-m);
+      &__header {
+        display: flex;
+        font-weight: $font-weight__light;
+        color: $color__gray;
+        margin-bottom: var(--content__space-s);
+        i {
+          color: $color__orange;
+          margin-right: var(--content__space-xs);
+          margin-top: .3rem;
+        }
+        &:last-of-type {margin-bottom: 0}
+      }
+    }
+    .form {flex-basis: var(--section__division-s);}
+  }
+}
+
+/*
+    Media queries
+-------------------------------------
+*/
+
+@media screen and (max-width: 1199px) {
+  .contact {
+    &__content {
+      .info,
+      .form {flex-basis: 45%;}
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .contact {
+    &__content {
+      flex-direction: column;
+      .info,
+      .form {
+        flex-basis: 100%;
+        width: 100%;
+      }
+      .info {margin-top: 0;}
+      .form {
+        .wpcf7-form {
+          input[type=checkbox] {
+            + span::before,
+            + span::after {top: -4px;}
+          }
+        }
+      }
+    }
+  }
+}
