@@ -22,7 +22,7 @@
         &.fa-google {
           &:hover {color: $color__google;}
         }
-        &.fa-linkedin-in {
+        &.fa-linkedin {
           &:hover {color: $color__linkedin;}
         }
         &.fa-github {
@@ -37,8 +37,8 @@
 
   &__content {
     @include flex-center();
-    .privacy-policy-cta {
-      margin-right: var(--content__space-m);
+    .divider {
+      margin: 0 var(--content__space-s);
     }
   }
 }
@@ -57,6 +57,7 @@
     }
     .footer__content {
       flex-direction: column;
+      .divider {display: none}
       .privacy-policy {
         margin-right: 0;
         margin-bottom: var(--content__space-s-mobile);

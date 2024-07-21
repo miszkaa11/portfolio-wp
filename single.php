@@ -9,6 +9,8 @@ get_header();
 <?php
 // Sticky
 require_once get_template_directory() . '/templates/parts/sticky.php';
+// ToTop
+require_once get_template_directory() . '/templates/parts/to-top.php';
 ?>
 
 	<main id="primary" class="site-main">
@@ -21,8 +23,8 @@ require_once get_template_directory() . '/templates/parts/sticky.php';
 				if ( in_category('news') ) {
 					the_post_navigation(
 						array(
-							'prev_text' => '<span class="nav-subtitle next btn" data-aos="zoom-in">' . esc_html__( 'PREV', 'michallukas' ) . '</span>',
-							'next_text' => '<span class="nav-subtitle prev btn" data-aos="zoom-in">' . esc_html__( 'NEXT', 'michallukas' ) . '</span>',
+							'prev_text' => '<span class="nav-subtitle primary next btn" data-aos="zoom-in">' . esc_html__( 'PREV', 'michallukas' ) . '</span>',
+							'next_text' => '<span class="nav-subtitle primary prev btn" data-aos="zoom-in">' . esc_html__( 'NEXT', 'michallukas' ) . '</span>',
 							'in_same_term' => true,
 							'taxonomy' => 'category',
 							'term' => 'news'

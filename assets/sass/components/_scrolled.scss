@@ -10,8 +10,8 @@
 #masthead {
   @include transition();
   &.scrolled {
-    height: var(--navigation__height-scrolled);
-    @include box-shadow(0 -8px 5px 10px rgba(171, 178, 178, 0.25));
+    height: var(--navigation__height--scrolled);
+    @include box-shadow(0 0 0 2px rgba(171, 178, 178, 0.25));
     opacity: 0.9;
   }
 }

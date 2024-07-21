@@ -30,7 +30,7 @@ a {
   &:visited,
   &:focus,
   &:active {
-    color: $color__blue-light;
+    color: $color__gray;
   }
   @media (hover: hover) {
     &:hover {color: $color__blue-light;}
@@ -44,12 +44,12 @@ pre {
 img {
   width: 100%;
   height: auto;
+  object-fit: cover;
   @include transition();
   border-radius: var(--content__border-radius);
   @media (hover: hover) {
     &:hover {
-      @include box-shadow(0 0 15px 5px rgba(171, 178, 178, 0.25));
-      opacity: 0.9 !important;
+      @include box-shadow(0 0 0 2px rgba(171, 178, 178, 0.25));
     }
   }
 }

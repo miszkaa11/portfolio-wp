@@ -12,6 +12,11 @@ require_once get_template_directory() . '/templates/parts/sticky.php';
 #---------------------------------
 
 #---------------------------------
+# WIDGET::ToTop
+require_once get_template_directory() . '/templates/parts/to-top.php';
+#---------------------------------
+
+#---------------------------------
 # START::Template Section
 require_once get_template_directory() . '/templates/privacy-policy/template.php';
 # END::Template Section

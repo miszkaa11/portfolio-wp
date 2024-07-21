@@ -29,7 +29,7 @@
                 <?php the_content(); ?>
             </div><!-- .entry-content -->
             <div class="entry-cta" data-aos="zoom-in">
-                <a href="<?php the_permalink(); ?>" class="btn news__btn">READ MORE
+                <a href="<?php the_permalink(); ?>" class="primary btn">READ MORE
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                 <?php michallukas_post_thumbnail(); ?>
             </div>
             <div class="entry-cta--mobile" data-aos="zoom-in">
-                <a href="<?php the_permalink(); ?>" class="btn news__btn">READ MORE
+                <a href="<?php the_permalink(); ?>" class="primary btn">READ MORE
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

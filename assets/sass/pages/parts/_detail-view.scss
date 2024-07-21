@@ -9,19 +9,20 @@
 
   .detail-view__content {
     margin-bottom: var(--section__space);
+    .project {
+      padding-bottom: var(--content__space-l);
+    }
+    .info {
+      flex-direction: column;
+      padding: var(--content__space-l);
+      .customer,
+      .date,
+      .task {margin-bottom: var(--content__space-l);}
+    }
     .project,
     .info {
       @include flex-center();
       text-align: center;
-      padding: var(--content__space-l) 0;
-    }
-    .project {
-      i {margin-left: var(--content__space-xs);}
-    }
-    .info {
-      flex-direction: column;
-      .customer,
-      .date {margin-bottom: var(--content__space-l);}
     }
     .slider {
       .splide {
@@ -42,7 +43,10 @@
         }
       }
       img {
-        object-fit: contain;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: var(--detail-view-image__max-height);
       }
     }
   }

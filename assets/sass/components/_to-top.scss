@@ -1,0 +1,30 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/root" as *;
+@use "../abstracts/variables" as *;
+
+/*
+    To-top
+-------------------------------------
+*/
+
+.to-top {
+  display: none;
+  background-color: $color__gray-light;
+  position: fixed;
+  bottom: var(--to-top__position);
+  right: var(--to-top__position);
+  color: $color__gray;
+  width: var(--to-top__size);
+  height: var(--to-top__size);
+  border-radius: var(--button__border-radius);
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 9999;
+  &:hover {
+    color: $color__blue-light;
+    @include box-shadow(0 0 0 2px rgba(171, 178, 178, 0.25));
+  }
+  i {
+    font-size: var(--to-top__font-size);
+  }
+}

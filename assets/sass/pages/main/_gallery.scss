@@ -23,8 +23,16 @@
         justify-content: center;
         flex-basis: var(--section__division-m);
         padding: var(--content-box__spacing);
-        h3,
-        p {margin-bottom: var(--content__space-s);}
+        .gallery__icon,
+        .gallery__header,
+        .gallery__text {
+          margin-bottom: var(--content__space-s);
+        }
+        .gallery__icon {
+          i {
+            font-size: var(--gallery-icon__size);
+          }
+        }
       }
       .thumbnail {
         flex-basis: var(--section__division-l);
@@ -37,7 +45,6 @@
       .description,
       .thumbnail {height: 100%;
         .link {
-          i {margin-left: 0.3rem;}
           &:hover {
             i {
               @include transition();
@@ -72,6 +79,9 @@
         .thumbnail {
           flex-basis: 100%;
           width: 100%;
+          a {
+            display: flex;
+          }
         }
         .description {
           .link--desktop {display: none;}
@@ -79,8 +89,7 @@
         .thumbnail {max-height: 100%;
           .link--mobile {
             display: flex;
-            font-weight: $font-weight__regular;
-            margin: var(--content__space-xs-mobile) 0 var(--content__space-s-mobile) 0;
+            margin: var(--content__space-s-mobile) 0;
           }
         }
       }

@@ -9,6 +9,8 @@ get_header();
 <?php
 // Sticky
 require_once get_template_directory() . '/templates/parts/sticky.php';
+// ToTop
+require_once get_template_directory() . '/templates/parts/to-top.php';
 ?>
 
     <main id="primary" class="site-main">

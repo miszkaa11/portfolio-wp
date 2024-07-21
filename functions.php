@@ -7,7 +7,7 @@
 // Asset version
 if ( ! defined( '_ASSET_VER' ) ) {
     // Replace the version number of the theme on each release.
-    define( '_ASSET_VER', '1.0.1' );
+    define( '_ASSET_VER', '1.0.3' );
 }
 
 // Register nav menu

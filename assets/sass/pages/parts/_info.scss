@@ -23,8 +23,8 @@
         }
         .arrow {
           .arrow__btn {
-            width: calc(var(--arrow-width) + 5px);
-            height: calc(var(--arrow-height) + 5px);
+            width: calc(var(--arrow__width) + 5px);
+            height: calc(var(--arrow__height) + 5px);
           }
         }
       }
@@ -49,16 +49,40 @@
         max-height: var(--content__max-height);
         .info__header {
           font-family: $font-style__secondary;
-          color: $color__orange;
-          margin-bottom: var(--content__space-l);
         }
+        .info__header,
         .info__text {
           margin-bottom: var(--content__space-s);
+        }
+        .info__text {
           &:last-of-type {margin-bottom: 0;}
+        }
+        // Hidden text
+        .info__additional-text {
+          background-color: transparent;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 100%;
+          text-align: center;
+          transform: translateX(-50%);
+          padding: var(--content__space-s);
+          border-radius: var(--button__border-radius);
+          z-index: -1;
+        }
+        .info__image {
+          height: var(--image__height);
+          object-position: var(--image__position);
+          cursor: pointer;
+          transition: transform 0.3s ease-in-out;
+          &.show-additional-text {
+            transform: translateY(-56px);
+          }
         }
       }
     }
   }
+
 
   // Cv zone
   &.cv-zone {
@@ -94,7 +118,23 @@
 -------------------------------------
 */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 999px) {
+  .info {
+    &.about {
+      .info__content {
+        .info__inner {
+          width: 100%;
+          .info__image {
+            height: var(--image__height);
+            object-position: var(--image__position);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
   .info {
 
     // About
@@ -103,12 +143,7 @@
         flex-direction: column;
         .info__inner {
           &:nth-child(1) {
-            height: 625px;
             width: 100%;
-          }
-          img {
-            object-fit: cover;
-            object-position: 0 0;
           }
         }
       }

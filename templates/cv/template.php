@@ -46,6 +46,7 @@ get_header();
 				<p class="info__text text" data-aos="zoom-in"><?php the_field('about_text_2') ?></p>
 				<p class="info__text text" data-aos="zoom-in"><?php the_field('about_text_3') ?></p>
 				<p class="info__text text" data-aos="zoom-in"><?php the_field('about_text_4') ?></p>
+				<p class="info__text text" data-aos="zoom-in"><?php the_field('about_text_5') ?></p>
 			</div>
 			<div class="experience">
 				<div class="section-title">
@@ -102,6 +103,7 @@ get_header();
 					<p class="stack__text text" data-aos="zoom-in"><?php the_field('stack_text_11') ?></p>
 					<p class="stack__text text" data-aos="zoom-in"><?php the_field('stack_text_12') ?></p>
 					<p class="stack__text text" data-aos="zoom-in"><?php the_field('stack_text_13') ?></p>
+					<p class="stack__text text" data-aos="zoom-in"><?php the_field('stack_text_14') ?></p>
 				</div>
 			</div>
 			<div class="agreement">

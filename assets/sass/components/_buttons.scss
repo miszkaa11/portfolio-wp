@@ -11,46 +11,36 @@
   @include flex-center();
   background-color: $color__orange;
   color: $color__gray-dark;
+  font-weight: $font-weight__bold;
+  width: var(--button__width);
+  line-height: 1;
   border-radius: var(--button__border-radius);
   cursor: pointer;
   border: none;
+  position: relative;
   @include transition();
+  padding: 0 var(--content__space-s);
   &:hover {
     background-color: $color__gray-dark;
     color: $color__blue-light;
   }
 }
 
-// Submit
-.wpcf7-submit,
-.news__btn,
-.gallery__btn,
-.nav-subtitle {
-  font-weight: $font-weight__bold;
-  position: relative;
-  i {margin-left: var(--content__space-xs);}
-}
-
-.wpcf7-submit {
-  font-size: var(--button-submit__font-size);
-  width: var(--button-submit__width);
-  height: var(--button-submit__height);
-  &:hover {
+.primary,
+.secondary {
+  &:hover:not(.nav-subtitle) {
     margin-left: var(--content__space-xs);
   }
+  i {
+    margin-left: 0.3rem;
+  }
 }
-.news__btn,
-.gallery__btn,
-.nav-subtitle {
+
+.primary {
   font-size: var(--button__font-size);
-  width: var(--button__width);
   height: var(--button__height);
 }
-
-.news__btn,
-.gallery__btn,
-.nav-subtitle {
-  &:hover {
-    margin-left: var(--content__space-xs);
-  }
+.secondary {
+  font-size: var(--button-submit__font-size);
+  height: var(--button-submit__height);
 }

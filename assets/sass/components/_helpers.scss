@@ -12,8 +12,8 @@
   @include flex-center();
   &__btn {
     @include flex-center();
-    width: var(--arrow-width);
-    height: var(--arrow-height);
+    width: var(--arrow__width);
+    height: var(--arrow__height);
     i {font-size: var(--arrow__font-size);}
     &:visited,
     &:focus,
@@ -27,6 +27,9 @@
 // Fancybox
 #fancybox-content {
   border-width: 0 !important;
+  img {
+    border-radius: 0 !important;
+  }
 }
 .fancy-ico span {
   background: $color__orange !important;

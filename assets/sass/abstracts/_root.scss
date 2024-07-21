@@ -8,16 +8,18 @@
 :root {
   // Navigation
   --navigation__height: 125px;
-  --navigation__height-scrolled: 100px;
+  --navigation__height--scrolled: 90px;
   --navigation__font-size: 1.675rem;
   --menu-item__spacing: 0 2rem;
 
-  --navigation__width-mobile: 25%;
-  --navigation__height-mobile: 100vh;
+  --navigation__width--mobile: 25%;
+  --navigation__height--mobile: 100vh;
 
   --navigation-toggle__width: 54px;
   --navigation-toggle__height: 40px;
   --navigation-toggle-span__height: 6px;
+
+  --logo__width: 102px;
 
   // Section
   --section__space: 6rem;
@@ -87,20 +89,24 @@
   --color__github: $color__github;
 
   // Arrow
-  --arrow-width: 50px;
-  --arrow-height: 50px;
+  --arrow__width: 50px;
+  --arrow__height: 50px;
   --arrow__font-size: 1.5rem;
 
   // Title
   --title__spacing: 6rem 0;
-  --title__spacing-optional: 12rem 0 6rem 0;
   --title__space: 1rem;
+
+  // About
+  --image__height: auto;
+  --image__position: unset;
 
   // Gallery cards
   --gallery-card__height: 395px;
   --gallery-card__max-width: 825px;
   --gallery-card__max-height: 405px;
   --gallery-card__order: 1;
+  --gallery-icon__size: 1.5rem;
 
   // News cards
   --news-card__height: 355px;
@@ -110,10 +116,8 @@
   --icons__font-size: 8rem;
   --icons__spacing: 5rem;
 
-  // Gallery template
-  --gallery-template-image__height: 600px;
-  --gallery-template-image__min-width: 135px;
-  --gallery-template-image__margin-top: 5rem;
+  // Detail View
+  --detail-view-image__max-height: 575px;
 
   // Form
   --form-input__height: 50px;
@@ -126,11 +130,12 @@
 
   // Button
   --button__font-size: 0.90rem;
-  --button-submit__font-size: 1rem;
-  --button__width: 125px;
-  --button-submit__width: 175px;
+  --button__width: fit-content;
   --button__height: 40px;
+
+  --button-submit__font-size: 1rem;
   --button-submit__height: 50px;
+
   --button__border-radius: .6rem;
 
   // Sticky
@@ -141,10 +146,14 @@
   --sticky-content__height: 130px;
 
   --sticky-icon__font-size: 2.5rem;
-  --sticky__hide-value: -200px;
-  --sticky-__width-clicked: 150px;
+  --sticky__width--clicked: 150px;
 
   --sticky-after__vertical-position: calc(2rem + -1px);
+
+  // ToTop
+  --to-top__size: 60px;
+  --to-top__font-size: 2rem;
+  --to-top__position: 2rem;
 }
 
 /*
@@ -154,26 +163,25 @@
 
 @media screen and (max-width: 1564px) {
   :root {
-    // Gallery
-    --gallery-card__content-height: auto;
-    --gallery-card__height: 345px;
-
-    // Skills
-    --icons__font-size: 7rem;
-
     // Font size
     --font-size__global: 1.125rem;
     --font-size__text: 1.125rem;
 
     // Form
     --top__position: 2.8rem;
+
+    // Gallery
+    --gallery-card__height: 345px;
+
+    // Skills
+    --icons__font-size: 7rem;
   }
 }
 
 @media screen and (max-width: 1399px) {
   :root {
     // Navigation
-    --navigation__width-mobile: 40%;
+    --navigation__width--mobile: 40%;
 
     --navigation-toggle__width: 46px;
     --navigation-toggle__height: 36px;
@@ -192,23 +200,14 @@
     --content__space-l: 2rem;
 
     --arrow__font-size: 1.4rem;
-    --arrow-width: 45px;
-    --arrow-height: 45px;
+    --arrow__width: 45px;
+    --arrow__height: 45px;
 
     // Title
     --title__spacing: 5rem 0;
-    --title__spacing-optional: 11rem 0 5rem 0;
-
-    // Gallery cards
-    --gallery-card__spacing: 7rem;
-    --gallery-card__margin-bottom: 0.5rem;
 
     // Skills
     --icons__font-size: 6rem;
-
-    // Gallery template
-    --gallery-template-image__height: 500px;
-    --gallery-template-image__min-width: 100px;
 
     // Sticky
     --sticky-signature__font-size: 0.85rem;
@@ -217,7 +216,12 @@
     --sticky-content__height: 115px;
 
     --sticky-icon__font-size: 2rem;
-    --sticky-__width-clicked: 125px;
+    --sticky__width--clicked: 125px;
+
+    // ToTop
+    --to-top__size: 50px;
+    --to-top__font-size: 1.5rem;
+    --to-top__position: 1.5rem;
   }
 }
 
@@ -225,10 +229,13 @@
   :root {
     // Navigation
     --navigation__height: 100px;
-    --navigation__height-scrolled: 85px;
+    --navigation__height--scrolled: 85px;
     --navigation__font-size: 1.575rem;
-    --navigation__width-mobile: 50%;
+    --navigation__width--mobile: 50%;
     --navigation__opacity: 1;
+
+    // Content
+    --content-box__spacing: 1rem 2rem;
 
     // Font size
     --font-size__global: 1rem;
@@ -244,21 +251,7 @@
 
     // Gallery cards
     --gallery-card__height: 300px;
-    --gallery-card__spacing: 5rem;
-
-    // News cards
-    --news-card__content-height: 325px;
-    --content-box__spacing: 1rem 2rem;
-
-    // Gallery template
-    --gallery-template-image__min-width: 85px;
-  }
-}
-
-@media screen and (max-width: 1099px) {
-  :root {
-    // News cards
-    --news-card__content-height: 300px;
+    --gallery-icon__size: 1.25rem;
   }
 }
 
@@ -268,6 +261,8 @@
     --content__space-l: 1rem;
     --content__space-s: 0.5rem;
 
+    --content-box__spacing: 1rem;
+
     // Font size
     --font-size__header-m: 1.375rem;
     --font-size__header-l: 2rem;
@@ -275,12 +270,12 @@
 
     // Arrow
     --arrow__font-size: 1.3rem;
-    --arrow-width: 40px;
-    --arrow-height: 40px;
+    --arrow__width: 40px;
+    --arrow__height: 40px;
 
-    // News cards
-    --news-card__content-height: auto;
-    --content-box__spacing: 1rem;
+    // About
+    --image__height: 600px;
+    --image__position: -3.5rem 0;
 
     // Gallery cards
     --gallery-card__height: auto;
@@ -289,9 +284,6 @@
     // Skills
     --icons__division: 33.333%;
     --icons__font-size: 5rem;
-
-    // Gallery template
-    --gallery-template-image__height: 355px;
   }
 }
 
@@ -308,49 +300,45 @@
   :root {
     // Navigation
     --navigation__height: 85px;
-    --navigation__height-scrolled: 75px;
-    --navigation__width-mobile: 100%;
+    --navigation__height--scrolled: 75px;
+    --navigation__width--mobile: 100%;
 
     --navigation-toggle__width: 40px;
     --navigation-toggle__height: 32px;
 
+    --logo__width: 80px;
+
     // Section
     --section__space: 4rem;
 
-    // Content
-    --content__padding: 0 1rem;
-    --section__division-s: auto;
-    --section__division-m: auto;
-    --section__division-l: auto;
-    --section__division-xl: auto;
-
     // Title
     --title__spacing: 4rem 0;
-    --title__spacing-optional: 9rem 0 4rem 0;
 
     // Form
     --top__position: 2.4rem;
 
     // Button
-    --button__font-size: 0.90rem;
+    --button__font-size: 0.75rem;
     --button__height: 30px;
     --button-submit__height: 40px;
 
     // News card
     --news-card__max-height: auto;
 
-    // Gallery template
-    --gallery-template-image__min-width: 25px;
-
     // Sticky
     --sticky-button__width: 32px;
     --sticky-content__width: 150px;
     --sticky-content__height: 100px;
-    --sticky-__width-clicked: 100px;
+    --sticky__width--clicked: 100px;
+
+    // ToTop
+    --to-top__size: 40px;
+    --to-top__font-size: 1rem;
+    --to-top__position: 1rem;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 650px) {
   :root {
     // Scrolled
     --navigation__main-height-scrolled: 75px;
@@ -361,15 +349,22 @@
     // Section
     --section__space: 3rem;
 
+    // Content
+    --content__padding: 0 1rem;
+    --section__division-s: auto;
+    --section__division-m: auto;
+    --section__division-l: auto;
+    --section__division-xl: auto;
+
     // Title
     --title__spacing: 3rem 0;
-    --title__spacing-optional: 8rem 0 3rem 0;
 
     // Font size
     --font-size__header-xl: 2.575rem;
 
-    // Gallery cards
-    --gallery-card__spacing: 3rem;
+    // About
+    --image__height: 500px;
+    --image__position: 0 0;
 
     // Skills
     --icons__division: 50%;

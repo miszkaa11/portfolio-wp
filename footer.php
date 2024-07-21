@@ -11,7 +11,7 @@ $icons = [
 	],
 	[
 		'field'  => 'linkedinLink',
-		'icon'   => 'linkedin-in',
+		'icon'   => 'linkedin',
 		'prefix' => ''
 	],
 	[
@@ -37,6 +37,7 @@ $icons = [
 			<div class="privacy-policy-cta">
 				<a href="/template/privacy-policy/" class="link">.privacyPolicy</a>
 			</div>
+            <span class="divider">|</span>
 			<div class="copyrights">
 				<p class="text">Copyright &copy; <?= date( 'Y' ) ?> <?php echo get_personal_info(fieldName: 'name')?></p>
 			</div>

@@ -19,17 +19,23 @@
   .sticky__title {
     width: var(--sticky-button__width);
     @include transition();
+    &:hover {
+      @include box-shadow(0 0 0 2px rgba(171, 178, 178, 0.25));
+      .sticky__header {
+        color: $color__blue-light;
+      }
+    }
     .sticky__header {
       font-family: $font-style__secondary;
       font-weight: $font-weight__light;
-      color: $color__gray-dark;
+      color: $color__gray;
       transform: rotate(-90deg);
       @include transition();
     }
   }
   .sticky__title,
   .sticky__items {
-    background-color: $color__orange;
+    background-color: $color__gray-light;
     @include flex-center();
     height: var(--sticky-content__height);
     border-top-left-radius: var(--content__border-radius);
@@ -38,7 +44,7 @@
   .sticky__items {
     position: absolute;
     top: var(--sticky__position);
-    right: var(--sticky__hide-value);
+    right: calc(-1 * var(--sticky-content__width));
     transform: translateY(-50%);
     width: var(--sticky-content__width);
     @include transition(right);
@@ -49,9 +55,10 @@
         @include transition();
         i {
           font-size: var(--sticky-icon__font-size);
-          color: $color__gray-dark;
+          color: $color__gray;
           @include transition();
           &:hover {
+            color: $color__blue-light;
             @include scale();
           }
         }
@@ -59,17 +66,17 @@
         &.mail {
           &:hover {
             &::after {
-              background: $color__orange;
+              background: transparent;
               content: "";
               position: absolute;
               width: var(--sticky-content__width);
               bottom: 1rem;
+              left: 50%;
               font-size: var(--sticky-signature__font-size);
               font-weight: $font-weight__regular;
-              left: 50%;
+              color: $color__blue-light;
               text-align: center;
               transform: translateX(-50%);
-              color: $color__gray-dark;
               border-bottom-left-radius: var(--content__border-radius);
             }
           }
@@ -88,16 +95,17 @@
     animation: none;
     transform: translateY(-50%);
     .sticky__title {
-      width: var(--sticky-__width-clicked);
+      width: var(--sticky__width--clicked);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       border-left: 2px solid $color__gray-dark;
+      box-shadow: none;
       .sticky__header {
         transform: rotate(0);
         @include transition();
       }
     }
-    .sticky__items {right: var(--sticky-__width-clicked);}
+    .sticky__items {right: var(--sticky__width--clicked);}
   }
 }
 

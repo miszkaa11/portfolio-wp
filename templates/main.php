@@ -6,8 +6,13 @@
 get_header();
 
 #---------------------------------
-# WIDGET::Sticky Info
+# WIDGET::Sticky
 require_once get_template_directory() . '/templates/parts/sticky.php';
+#---------------------------------
+
+#---------------------------------
+# WIDGET::ToTop
+require_once get_template_directory() . '/templates/parts/to-top.php';
 #---------------------------------
 
 #---------------------------------

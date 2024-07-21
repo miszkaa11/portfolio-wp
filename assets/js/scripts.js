@@ -96,3 +96,45 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 });
 
+// JavaScript dołączany w pliku lub bezpośrednio w skrypcie
+document.addEventListener('DOMContentLoaded', function() {
+   const image = document.querySelector('.info__image');
+
+   image.addEventListener('click', function() {
+      this.classList.toggle('show-additional-text');
+   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+   const scrollToTopBtn = document.getElementById("to-top");
+
+   window.onscroll = function() {
+      scrollFunction();
+   };
+
+   function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         scrollToTopBtn.style.display = "flex";
+         scrollToTopBtn.style.justifyContent = "center";
+         scrollToTopBtn.style.alignItems = "center";
+
+         const footer = document.getElementById("footer");
+         const footerPosition = footer.getBoundingClientRect().top;
+         if (footerPosition < window.innerHeight && footerPosition > 0) {
+            scrollToTopBtn.style.backgroundColor = "#21252B";
+         } else {
+            scrollToTopBtn.style.backgroundColor = "";
+         }
+      } else {
+         scrollToTopBtn.style.display = "none";
+      }
+   }
+
+   scrollToTopBtn.addEventListener("click", function() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+   });
+});
+
+
+

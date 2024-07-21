@@ -13,7 +13,6 @@ $sticky_fields = [
 	],
 ];
 ?>
-?>
 <div class="sticky" id="stickyButton">
 	<div class="sticky__title">
 		<h2 class="sticky__header text">CONTACT</h2>
